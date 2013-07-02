@@ -1,0 +1,61 @@
+<%= form_for([:admin,@roomtype], html: {class: "form-horizontal"}) do |f| %>
+  <% if @roomtype.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@roomtype.errors.count, "error") %> prohibited this roomtype from being saved:</h2>
+
+      <ul>
+      <% @roomtype.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :name , class: "control-label" %>
+    <div class="controls">
+    <%= f.text_field :name %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :roomid, class: "control-label" %>
+    <div class="controls">
+    <%= f.text_field :roomid %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, class: "control-label" %>
+    <div class="controls">
+    <%= f.text_field :description %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :allotment ,class: "control-label"%>
+    <div class="controls">
+    <%= f.number_field :allotment %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :cutoffdate, class: "control-label" %>
+    <div class="controls">
+    <%= f.number_field :cutoffdate %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sold ,class: "control-label" %>
+    <div class="controls">
+    <%= f.number_field :sold %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :roomfunction, class: "control-label" %>
+    <div class="controls">
+    <%= f.text_area :roomfunction %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+    <%= f.submit %>
+    </div>
+  </div>
+<% end %>

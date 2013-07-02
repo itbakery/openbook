@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Address1:</b>
+  <%= @organization.address1 %>
+</p>
+
+<p>
+  <b>Address2:</b>
+  <%= @organization.address2 %>
+</p>
+
+<p>
+  <b>Telephone:</b>
+  <%= @organization.telephone %>
+</p>
+
+<p>
+  <b>Fax:</b>
+  <%= @organization.fax %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%= @organization.contact %>
+</p>
+
+<p>
+  <b>Valid from:</b>
+  <%= @organization.valid_from %>
+</p>
+
+<p>
+  <b>Valid to:</b>
+  <%= @organization.valid_to %>
+</p>
+
+<p>
+  <b>Isactive:</b>
+  <%= @organization.isactive %>
+</p>
+
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Back', organizations_path %>

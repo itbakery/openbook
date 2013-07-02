@@ -1,0 +1,2 @@
+module Admin::RoomratesHelper
+end

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <b>client:</b>
+  <%= @organization.client.try(:name) %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @organization.name %>
+</p>
+
+<p>
+  <b>Address1:</b>
+  <%= @organization.address1 %>
+</p>
+
+<p>
+  <b>Address2:</b>
+  <%= @organization.address2 %>
+</p>
+
+<p>
+  <b>Telephone:</b>
+  <%= @organization.telephone %>
+</p>
+
+<p>
+  <b>Fax:</b>
+  <%= @organization.fax %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%= @organization.contact %>
+</p>
+
+<p>
+  <b>Valid from:</b>
+  <%= @organization.valid_from.strftime('%b %d, %Y') %>
+</p>
+
+<p>
+  <b>Valid to:</b>
+  <%= @organization.valid_to.strftime('%b %d, %Y') %>
+</p>
+
+<p>
+  <b>Isactive:</b>
+  <%= @organization.isactive %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_organization_path(@organization) %> |
+<%= link_to 'Back', admin_organizations_path %>

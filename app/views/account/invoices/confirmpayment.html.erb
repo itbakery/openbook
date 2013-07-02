@@ -1,0 +1,14 @@
+<form name="sendform" method="post" action="https://rt05.kasikornbank.com/pgpayment/payment.aspx" id="kbank">
+<input type="hidden" id=MERCHANT2 name=MERCHANT2 value="<%=@bank_arg["MERCHANT2"]%>">
+<input type="hidden" id=TERM2 name=TERM2 value="<%=@bank_arg["TERM2"]%>">
+<input type="hidden" id=AMOUNT2 name=AMOUNT2 value="<%=@form_arg["AMOUNT2"]%>">
+<input type="hidden" id=URL2 name=URL2 value="">
+<input type="hidden" id=RESPURL name=RESPURL value="<%=@bank_arg["RESPURL"]%>">
+<input type="hidden" id=IPCUST2 name=IPCUST2 value="<%=@bank_arg["IPSCUST2"]%>">
+<input type="hidden" id=DETAIL2 name=DETAIL2 value="<%=@form_arg["DETAIL2"]%>">
+<input type="hidden" id=INVMERCHANT name=INVMERCHANT value="<%=@form_arg["INVMERCHANT"]%>">
+<input type="hidden" id=FILLSPACE name=FILLSPACE value="Y">
+</form>
+ <script>
+     document.getElementById("kbank").submit()
+</script>

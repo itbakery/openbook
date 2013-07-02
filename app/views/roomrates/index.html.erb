@@ -1,0 +1,27 @@
+<h1>Listing roomrates</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Occupancy</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @roomrates.each do |roomrate| %>
+  <tr>
+    <td><%= roomrate.name %></td>
+    <td><%= roomrate.occupancy %></td>
+    <td><%= roomrate.description %></td>
+    <td><%= link_to 'Show', roomrate %></td>
+    <td><%= link_to 'Edit', edit_roomrate_path(roomrate) %></td>
+    <td><%= link_to 'Destroy', roomrate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Roomrate', new_roomrate_path %>

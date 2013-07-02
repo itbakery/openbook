@@ -1,0 +1,55 @@
+<%= form_for([:admin,@ratesheet], html: {class: "form-horizontal"}) do |f| %>
+  <% if @ratesheet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ratesheet.errors.count, "error") %> prohibited this ratesheet from being saved:</h2>
+
+      <ul>
+      <% @ratesheet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :date, class: "control-label" %>
+    <div class="controls">
+    <%= f.text_field :date %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :day, class: "control-label" %>
+    <div class="controls">
+    <%= f.text_field :day %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :minstay, class: "control-label" %>
+    <div class="controls">
+    <%= f.number_field :minstay %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :message, class: "control-label" %>
+    <div class="controls">
+    <%= f.text_field :message %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :price, class: "control-label" %>
+    <div class="controls">
+    <%= f.text_field :price %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :isactive, class: "control-label" %>
+    <div class="controls">
+    <%= f.check_box :isactive %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+    <%= f.submit %>
+    </div>
+  </div>
+<% end %>

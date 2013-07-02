@@ -1,0 +1,13 @@
+<p>test  ratesheets/_ratesheet </p>
+<% unless ratesheet.name.nil? %>
+  <tr>
+    <td> <%= ratesheet.name %> </td>
+    <td> <%= ratesheet.hotel.name1 %> </td>
+    <td> <%= ratesheet.roomtype.name %> </td>
+    <td> <%= ratesheet.roomrate.name %> </td>
+    <td> <%= ratesheet.period.name %> </td>
+    <td>
+      <%= link_to "<i class=\"icon-trash\"></i>Destroy".html_safe,destroy_ratesheet_admin_hotel_path(ratesheet),class: 'btn btn-small pull-right', method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
+<% end %>

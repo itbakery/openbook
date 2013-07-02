@@ -1,0 +1,127 @@
+<%= form_for([:admin,@hotel], html: {class: "form-horizontal"}) do |f| %>
+  <% if @hotel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hotel.errors.count, "error") %> prohibited this hotel from being saved:</h2>
+
+      <ul>
+      <% @hotel.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="control-group">
+    <%= f.label :country , class: "control-label"%>
+    <div class="controls">
+    <%= f.collection_select :country_id, Country.all.to_a, :id, :name, include_blank: true %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :province , class: "control-label"%>
+    <div class="controls">
+    <%= f.grouped_collection_select :province_id, Country.all.to_a, :provinces, :name, :id, :name, include_blank: true %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :zone , class: "control-label"%>
+    <div class="controls">
+    <%= f.grouped_collection_select :zone_id, Province.all.to_a, :zones, :name, :id, :name, include_blank: true %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :name1 %>
+    <div class="controls">
+    <%= f.text_field :name1 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name2 %>
+    <div class="controls">
+    <%= f.text_field :name2 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :address1 %>
+    <div class="controls">
+    <%= f.text_field :address1 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :address2 %>
+    <div class="controls">
+    <%= f.text_field :address2 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :address3 %>
+    <div class="controls">
+    <%= f.text_field :address3 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :city %>
+    <div class="controls">
+    <%= f.text_field :city %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :postal %>
+    <div class="controls">
+    <%= f.text_field :postal %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :telephone %>
+    <div class="controls">
+    <%= f.text_field :telephone %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :fax %>
+    <div class="controls">
+    <%= f.text_field :fax %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email %>
+    <div class="controls">
+    <%= f.text_field :email %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :url %>
+    <div class="controls">
+    <%= f.text_field :url %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :reservationemail %>
+    <div class="controls">
+    <%= f.text_field :reservationemail %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :localtion %>
+    <div class="controls">
+    <%= f.text_field :localtion %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :star %>
+    <div class="controls">
+    <%= f.number_field :star %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :isactive %>
+    <div class="controls">
+    <%= f.check_box :isactive %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+    <%= f.submit 'add hotel', class: 'btn' %>
+    </div>
+  </div>
+<% end %>

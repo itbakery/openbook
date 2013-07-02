@@ -1,0 +1,50 @@
+<%= form_for  :ratesheet, url: create_ratesheet_admin_hotel_path , html: {id: 'ratesheet', class: 'form-horizontal', remote: true} do |f|  %>
+  <%= hidden_field_tag  "ratesheet[hotel_id]", @hotel.id %>
+  <div class="row">
+    <div class="span8">
+      <div class="control-group">
+        <p class="control-label">Name</p>
+        <div class="controls">
+          <%= f.text_field  :name, class:  "fullwidth" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <div class="control-group">
+        <p class="control-label">Roomtype</p>
+        <div class="controls">
+          <%= select_tag  "ratesheet[roomtype_id]", options_from_collection_for_select(@hotel.roomtypes,:id,:name), prompt: "Select Roomtype" %>
+        </div>
+      </div>
+    </div>
+    <div class="span4">
+      <div class="control-group">
+        <p class="control-label">Roomrate </p>
+        <div class="controls">
+          <%= select_tag "ratesheet[roomrate_id]", options_from_collection_for_select(@hotel.roomrates,:id,:name), prompt: "Select Roomrate" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <div class="control-group">
+        <p class="control-label">period</p>
+        <div class="controls">
+          <%= select_tag  "ratesheet[period_id]", options_from_collection_for_select(@hotel.periods,:id,:fullname), class: "fullwidth", prompt: "Select period" %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit 'add ratesheet', class: 'btn' %>
+    </div>
+  </div>
+
+<% end %>
+  <div id="pricesheetholder" class="table"></div>

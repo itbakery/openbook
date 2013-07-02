@@ -1,0 +1,41 @@
+<%= form_for(@pricesheet) do |f| %>
+  <% if @pricesheet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pricesheet.errors.count, "error") %> prohibited this pricesheet from being saved:</h2>
+
+      <ul>
+      <% @pricesheet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :day %><br />
+    <%= f.text_field :day %>
+  </div>
+  <div class="field">
+    <%= f.label :minstay %><br />
+    <%= f.number_field :minstay %>
+  </div>
+  <div class="field">
+    <%= f.label :message %><br />
+    <%= f.text_field :message %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :isactive %><br />
+    <%= f.check_box :isactive %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

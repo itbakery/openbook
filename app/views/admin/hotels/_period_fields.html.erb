@@ -1,0 +1,14 @@
+<fieldset>
+  <table>
+    <tr>
+      <td><%= f.label :name, "period name" %></td>
+      <td><%= f.text_field :name %></td>
+      <td><%= f.label :valid_from, "Valid From" %></td>
+      <td><%= f.text_field :valid_from %></td>
+      <td><%= f.label :valid_to, "Valid To" %></td>
+      <td><%= f.text_field :valid_to %></td>
+      <td><%= f.hidden_field :_destroy %>
+      <%= link_to "remove", '#', class: "remove_fields" %></td>
+    </tr>
+  </table>
+</fieldset>

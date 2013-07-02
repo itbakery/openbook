@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @roomtype.name %>
+</p>
+
+<p>
+  <b>Roomid:</b>
+  <%= @roomtype.roomid %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @roomtype.description %>
+</p>
+
+<p>
+  <b>Allotment:</b>
+  <%= @roomtype.allotment %>
+</p>
+
+<p>
+  <b>Cutoffdate:</b>
+  <%= @roomtype.cutoffdate %>
+</p>
+
+<p>
+  <b>Sold:</b>
+  <%= @roomtype.sold %>
+</p>
+
+<p>
+  <b>Roomfunction:</b>
+  <%= @roomtype.roomfunction %>
+</p>
+
+
+<%= link_to 'Edit', edit_roomtype_path(@roomtype) %> |
+<%= link_to 'Back', roomtypes_path %>

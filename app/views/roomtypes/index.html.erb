@@ -1,0 +1,35 @@
+<h1>Listing roomtypes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Roomid</th>
+    <th>Description</th>
+    <th>Allotment</th>
+    <th>Cutoffdate</th>
+    <th>Sold</th>
+    <th>Roomfunction</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @roomtypes.each do |roomtype| %>
+  <tr>
+    <td><%= roomtype.name %></td>
+    <td><%= roomtype.roomid %></td>
+    <td><%= roomtype.description %></td>
+    <td><%= roomtype.allotment %></td>
+    <td><%= roomtype.cutoffdate %></td>
+    <td><%= roomtype.sold %></td>
+    <td><%= roomtype.roomfunction %></td>
+    <td><%= link_to 'Show', roomtype %></td>
+    <td><%= link_to 'Edit', edit_roomtype_path(roomtype) %></td>
+    <td><%= link_to 'Destroy', roomtype, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Roomtype', new_roomtype_path %>

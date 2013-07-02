@@ -1,0 +1,5 @@
+
+$('#modal-window').modal('show')
+$('.modal-body').html('<%= escape_javascript(render :partial => 'sendconfirm', locals: { :invoice => @invoice}) %>');
+
+

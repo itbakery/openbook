@@ -1,0 +1,50 @@
+<%= form_for([:admin,@period], html: {class: "form-horizontal"}) do |f| %>
+  <% if @period.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@period.errors.count, "error") %> prohibited this period from being saved:</h2>
+
+      <ul>
+      <% @period.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="control-group">
+    <%= f.label :hotel , class: "control-label"%>
+    <div class="controls">
+      <%= f.collection_select :hotel_id, Hotel.all.to_a, :id, :name1, include_blank: true %>
+    </div>
+  </div>
+
+
+  <div class="control-group">
+    <%= f.label :name , class: "control-label" %>
+    <div class="controls">
+    <%= f.text_field :name %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :valid_from, class: "control-label"  %>
+    <div class="controls">
+    <%= f.text_field :valid_from %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :valid_to, class: "control-label" %>
+    <div class="controls">
+    <%= f.text_field :valid_to %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :isactive, class: "control-label" %>
+    <div class="controls">
+    <%= f.check_box :isactive %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+    <%= f.submit %>
+    </div>
+  </div>
+<% end %>

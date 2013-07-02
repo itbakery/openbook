@@ -1,0 +1,36 @@
+ <ul class="nav nav-tabs">
+  <li class="active"><a href="#hotel" data-toggle="tab">Hotel Infomation</a></li>
+  <li><a href="#allrate" data-toggle="tab">All RateSheets</a></li>
+  <li><a href="#ratesheet" data-toggle="tab">RateSheet</a></li>
+</ul>
+
+<div class="row">
+    <div id="profile" class="span9">
+
+    </div>
+</div>
+<div class="tab-content">
+  <div class="tab-pane active" id="hotel">
+    <%= render partial: 'hotelform' %>
+  </div>
+  <div class="tab-pane" id="allrate">
+    <div class="table">
+      <p>
+        <span class="col1"> Ratesheet Name </span>
+        <span class="col1"> Hotel </span>
+
+        <span class="col1" > Roomtype </span>
+
+        <span class="col1"> Roomrate </span>
+        <span class="col2">  Period  </span>
+        <span class="collast"> Control  </span>
+      </p>
+      <%= render partial: "listratesheet", collection: @hotel.ratesheets, as: :ratesheet %>
+    </div>
+  </div>
+  <div class="tab-pane" id="ratesheet">
+    <% @ratesheet = @hotel.ratesheets.build %>
+    <%= render :partial => 'ratesheet', object:  @ratesheet %>
+  </div>
+</div>
+

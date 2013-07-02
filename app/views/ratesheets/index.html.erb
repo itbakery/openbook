@@ -1,0 +1,33 @@
+<h1>Listing ratesheets</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Day</th>
+    <th>Minstay</th>
+    <th>Message</th>
+    <th>Price</th>
+    <th>Isactive</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ratesheets.each do |ratesheet| %>
+  <tr>
+    <td><%= ratesheet.date %></td>
+    <td><%= ratesheet.day %></td>
+    <td><%= ratesheet.minstay %></td>
+    <td><%= ratesheet.message %></td>
+    <td><%= ratesheet.price %></td>
+    <td><%= ratesheet.isactive %></td>
+    <td><%= link_to 'Show', ratesheet %></td>
+    <td><%= link_to 'Edit', edit_ratesheet_path(ratesheet) %></td>
+    <td><%= link_to 'Destroy', ratesheet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ratesheet', new_ratesheet_path %>

@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @partner.name %>
+</p>
+
+<p>
+  <b>Name2:</b>
+  <%= @partner.name2 %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @partner.description %>
+</p>
+
+<p>
+  <b>Isactive:</b>
+  <%= @partner.isactive %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @partner.url %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @partner.address %>
+</p>
+
+<p>
+  <b>Telephone:</b>
+  <%= @partner.telephone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @partner.email %>
+</p>
+
+<p>
+  <b>Reservationmail:</b>
+  <%= @partner.reservationmail %>
+</p>
+
+<p>
+  <b>Valid from:</b>
+  <%= @partner.valid_from.strftime('%b %d, %Y') %>
+</p>
+
+<p>
+  <b>Valid to:</b>
+  <%= @partner.valid_to.strftime('%b %d, %Y') %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_partner_path(@partner) %> |
+<%= link_to 'Back', admin_partners_path %>

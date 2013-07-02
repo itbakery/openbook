@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @roomrate.name %>
+</p>
+
+<p>
+  <b>Occupancy:</b>
+  <%= @roomrate.occupancy %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @roomrate.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_roomrate_path(@roomrate) %> |
+<%= link_to 'Back', roomrates_path %>

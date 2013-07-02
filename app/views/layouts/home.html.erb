@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Openbook" %></title>
+    <%= csrf_meta_tags %>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <%= stylesheet_link_tag "application", :media => "all" %>
+
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <!-- Size should be 144 x 144 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+
+    <!-- For iPhone with high-resolution Retina display: -->
+    <!-- Size should be 114 x 114 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+
+    <!-- For first- and second-generation iPad: -->
+    <!-- Size should be 72 x 72 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <!-- Size should be 57 x 57 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+
+    <!-- For all other devices -->
+    <!-- Size should be 32 x 32 pixels -->
+    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+  </head>
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Openbook</a>
+          <div class="container nav-collapse">
+            <ul class="nav">
+              <li><%= link_to "Link1", "/path1"  %></li>
+              <li><%= link_to "Link2", "/path2"  %></li>
+              <li><%= link_to "Link3", "/path3"  %></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+          <div class="span4 boxshadow borderradius white ">
+            <div class="sidebar-nav">
+              <h3>Sidebar</h3>
+              <ul class="nav nav-list">
+                <li class="nav-header">Sidebar</li>
+                <li><%= link_to "Link1", "/path1"  %></li>
+                <li><%= link_to "Link2", "/path2"  %></li>
+                <li><%= link_to "Link3", "/path3"  %></li>
+              </ul>
+            </div><!--/.well -->
+          </div><!--/span-->
+          <div class="span8 boxshadow borderradius white">
+            <%= bootstrap_flash %>
+            <%= yield %>
+          </div>
+
+        </div><!--/row-->
+        <div class="row">
+          <div class="span6 boxshadow borderradius white">
+            <div class="">
+            <h3 id="hotel">hotel</h3>
+            </div>
+          </div>
+          <div class="span6 boxshadow borderradius white">
+            <div class="">
+
+            <h3 id="package">package</h3>
+            </div>
+          </div>
+        </div>
+      </div> <!-- /container -->
+
+<footer id="footer">
+    <div class="container">
+        <div class="foot-wrapper">
+            <div class="row-fluid">
+            <div class="span4">
+                <h3 class="widget-title">Address</h3>
+                <div class="widget-inner">
+                    <address>
+                        <ul class="icons">
+                            <li><i class="icon-map-marker"></i>Street Name 432/2, London, 90210</li>
+                            <li><i class="icon-phone"></i>(123) 456-7890</li>
+                            <li><i class="icon-print"></i>(123) 456-7890</li>
+                            <li><i class="icon-envelope"></i><a href="mailto:#">info@email.com</a></li>
+                        </ul>
+                    </address>
+                    <p><a class="logo-footer" href="./index.html">MODERN HOTEL</a></p>
+                    <ul class="social clearfix">
+                        <li><a rel="tooltip" data-placement="top" data-original-title="Facebook" href="#">
+                            <i class="icon-facebook-sign"></i>
+                        </a></li>
+                        <li><a rel="tooltip" data-placement="top" data-original-title="Twitter" href="#">
+                            <i class="icon-twitter-sign"></i>
+                        </a></li>
+                        <li><a rel="tooltip" data-placement="top" data-original-title="Linkedin" href="#">
+                            <i class="icon-linkedin-sign"></i>
+                        </a></li>
+                        <li><a rel="tooltip" data-placement="top" data-original-title="Pinterest" href="#">
+                            <i class="icon-pinterest-sign"></i>
+                        </a></li>
+                        <li><a rel="tooltip" data-placement="top" data-original-title="Google+" href="#">
+                            <i class="icon-google-plus-sign"></i>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="widget-inner">
+
+                </div>
+            </div>
+            <div class="span4">
+                <h3 class="widget-title">About Us</h3>
+                <div class="widget-inner">
+                    <p>Ut eu nulla eget massa blandit eleifend vel sedis lacus. Sed at viverra nulla.
+                        Fusce vel adipisci odio. Phasellus commodo, mauris eget pharetra scelerisque, est justo lacinia tortor.</p>
+                </div>
+                <h3 class="widget-title">Stay Updated</h3>
+                <div class="widget-inner">
+                    <p>Sign up for our newsletter. We won't share your email address.</p>
+                    <form>
+                        <div class="input-append">
+                            <input type="email" placeholder="Email Address" name="email" class="placeholder">
+                            <button class="btn btn-primary">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="span4">
+                <h3 class="widget-title">Latest Blog Posts</h3>
+                <div class="widget-inner">
+                    <ul class="icons lates-blog-post">
+                        <li><i class="icon-chevron-right"></i><a href="#">Lorem ipsum dolor sit amet</a><br>Aliquam nunc erat, suscipit molestie interdum eget, molestie vel eros.</li>
+                        <li><i class="icon-chevron-right"></i><a href="#">Quisque hendrerit nisl vitae magna </a><br>Aenean a sapien in magna luctus aliquet in eu purus. Sed venenatis luctus varius.</li>
+                        <li><i class="icon-chevron-right"></i><a href="#">Aenean gravida tincidunt velit nec congue </a><br>Sed a rhoncus mi. Morbi eu elit sapien, eu adipiscing nisl. Duis in turpis et mi molestie bibendum eget eget mauris.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</footer>
+      <section id="footer-menu">
+        <div class="container-fluid">
+          <div class="foot-wrapper">
+            <div class="row-fluid">
+              <div class="span4">
+                <p class="copyright">&copy; Copyright 2012. Powered by <a href="http://dxthemes.com/">DX Themes</a>.</p>
+              </div>
+              <div class="span8 hidden-phone">
+                <ul class="pull-right">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Portfolio</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Service</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Javascripts
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <%= javascript_include_tag "application" %>
+
+    </body>
+  </html>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @pricesheet.date %>
+</p>
+
+<p>
+  <b>Day:</b>
+  <%= @pricesheet.day %>
+</p>
+
+<p>
+  <b>Minstay:</b>
+  <%= @pricesheet.minstay %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @pricesheet.message %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @pricesheet.price %>
+</p>
+
+<p>
+  <b>Isactive:</b>
+  <%= @pricesheet.isactive %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_pricesheet_path(@pricesheet) %> |
+<%= link_to 'Back', admin_pricesheets_path %>

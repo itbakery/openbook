@@ -1,0 +1,51 @@
+ <h1 class="babyblue">Listing hotels</h1>
+
+<table>
+  <tr>
+    <th>Name1</th>
+    <th>Name2</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>Address3</th>
+    <th>City</th>
+    <th>Postal</th>
+    <th>Telephone</th>
+    <th>Fax</th>
+    <th>Email</th>
+    <th>Url</th>
+    <th>Reservationemail</th>
+    <th>Localtion</th>
+    <th>Star</th>
+    <th>Isactive</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @hotels.each do |hotel| %>
+  <tr>
+    <td><%= hotel.name1 %></td>
+    <td><%= hotel.name2 %></td>
+    <td><%= hotel.address1 %></td>
+    <td><%= hotel.address2 %></td>
+    <td><%= hotel.address3 %></td>
+    <td><%= hotel.city %></td>
+    <td><%= hotel.postal %></td>
+    <td><%= hotel.telephone %></td>
+    <td><%= hotel.fax %></td>
+    <td><%= hotel.email %></td>
+    <td><%= hotel.url %></td>
+    <td><%= hotel.reservationemail %></td>
+    <td><%= hotel.localtion %></td>
+    <td><%= hotel.star %></td>
+    <td><%= hotel.isactive %></td>
+    <td><%= link_to 'Show', hotel %></td>
+    <td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>
+    <td><%= link_to 'Destroy', hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Hotel', new_hotel_path %>

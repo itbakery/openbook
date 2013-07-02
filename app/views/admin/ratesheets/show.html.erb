@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @ratesheet.date %>
+</p>
+
+<p>
+  <b>Day:</b>
+  <%= @ratesheet.day %>
+</p>
+
+<p>
+  <b>Minstay:</b>
+  <%= @ratesheet.minstay %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @ratesheet.message %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @ratesheet.price %>
+</p>
+
+<p>
+  <b>Isactive:</b>
+  <%= @ratesheet.isactive %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_ratesheet_path(@ratesheet) %> |
+<%= link_to 'Back', admin_ratesheets_path %>

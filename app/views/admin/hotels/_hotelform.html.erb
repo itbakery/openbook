@@ -1,0 +1,297 @@
+<%= form_for([:admin,@hotel], html: {multipart: true, class: "form-horizontal"}) do |f| %>
+
+  <% if @hotel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hotel.errors.count, "error") %> prohibited this hotel from being saved:</h2>
+
+      <ul>
+        <% @hotel.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+    <legend class="bluegray">Logo</legend>
+    <div class="control-group">
+      <%=  show_tiny_logo(@hotel.logo) %>
+      <div class="controls">
+        <%= f.file_field :logo %>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="control-group">
+    <%= f.label :country , class: "control-label"%>
+    <div class="controls">
+      <%= f.collection_select :country_id, Country.all.to_a, :id, :name, include_blank: true %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <div class="control-group">
+        <%= f.label :province , class: "control-label"%>
+        <div class="controls">
+          <%= f.grouped_collection_select :province_id, Country.all.to_a, :provinces, :name, :id, :name, include_blank: true %>
+        </div>
+      </div>
+
+    </div>
+    <div class="span4">
+      <div class="control-group">
+        <%= f.label :zone , class: "control-label"%>
+        <div class="controls">
+          <%= f.grouped_collection_select :zone_id, Province.all.to_a, :zones, :name, :id, :name, include_blank: true %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <div class="control-group">
+        <%= f.label :name1 , class: "control-label"%>
+        <div class="controls">
+          <%= f.text_field :name1 %>
+        </div>
+      </div>
+
+    </div>
+    <div class="span4">
+      <div class="control-group">
+        <%= f.label :name2 , class: "control-label"%>
+        <div class="controls">
+          <%= f.text_field :name2 %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <div class="control-group">
+        <%= f.label :address1 , class: "control-label"%>
+        <div class="controls">
+          <%= f.text_field :address1 %>
+        </div>
+      </div>
+
+    </div>
+    <div class="span4">
+      <div class="control-group">
+        <%= f.label :address2 , class: "control-label"%>
+        <div class="controls">
+          <%= f.text_field :address2 %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <div class="control-group">
+        <%= f.label :street , class: "control-label"%>
+        <div class="controls">
+          <%= f.text_field :street %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <div class="control-group">
+        <%= f.label :postal , class: "control-label"%>
+        <div class="controls">
+          <%= f.text_field :postal %>
+        </div>
+      </div>
+
+    </div>
+    <div class="span4">
+      <div class="control-group">
+        <%= f.label :telephone , class: "control-label"%>
+        <div class="controls">
+          <%= f.text_field :telephone %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <div class="control-group">
+        <%= f.label :fax , class: "control-label"%>
+        <div class="controls">
+          <%= f.text_field :fax %>
+        </div>
+      </div>
+
+    </div>
+    <div class="span4">
+      <div class="control-group">
+        <%= f.label :email , class: "control-label"%>
+        <div class="controls">
+          <%= f.text_field :email %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <div class="control-group">
+        <%= f.label :url , class: "control-label"%>
+        <div class="controls">
+          <%= f.text_field :url %>
+        </div>
+      </div>
+
+    </div>
+    <div class="span4">
+      <div class="control-group">
+        <%= f.label :reservationemail , class: "control-label"%>
+        <div class="controls">
+          <%= f.text_field :reservationemail , class: "control-label"%>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <div class="control-group">
+        <%= f.label :localtion , class: "control-label"%>
+        <div class="controls">
+          <%= f.text_field :localtion %>
+        </div>
+      </div>
+
+    </div>
+    <div class="span4">
+      <div class="control-group">
+        <%= f.label :star , class: "control-label"%>
+        <div class="controls">
+          <%= f.number_field :star %>
+          <ul class="rating">
+            <% (1..5).each do |i| %>
+              <li id="rate_<%= i %>" data-stars="<%=i %>" class="rating_star"></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :isactive , class: "control-label"%>
+    <div class="controls">
+      <%= f.check_box :isactive %>
+    </div>
+  </div>
+  <fieldset>
+    <legend class="bluegray">Room Type</legend>
+    <div class="control-group">
+      <div class="controls">
+        <%= hidden_field_tag "hotel[roomtype_ids][]",nil %>
+        <% Roomtype.all.to_a.each do |roomtype|  %>
+
+          <%= check_box_tag "hotel[roomtype_ids][]", roomtype.id, @hotel.roomtype_ids.include?(roomtype.id) %>
+          <%= roomtype.name %>
+        <% end %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend class="bluegray">Room Rate</legend>
+    <div class="control-group">
+      <div class="controls">
+        <%= hidden_field_tag "hotel[roomrate_ids][]",nil %>
+        <% Roomrate.all.to_a.each do |roomrate|  %>
+
+          <%= check_box_tag "hotel[roomrate_ids][]", roomrate.id, @hotel.roomrate_ids.include?(roomrate.id) %>
+          <%= roomrate.name %>
+        <% end %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend class="bluegray">Currency</legend>
+    <div class="control-group">
+      <div class="controls">
+        <%= hidden_field_tag "hotel[currency_ids][]",nil %>
+        <% Currency.all.to_a.each do |currency|  %>
+
+          <%= check_box_tag "hotel[currency_ids][]", currency.id, @hotel.currency_ids.include?(currency.id) %>
+          <%= currency.fullname %>
+        <% end %>
+      </div>
+    </div>
+  </fieldset>
+
+
+  <legend class="bluegray">Periods
+  </legend>
+  <fieldset>
+    <%= f.fields_for :periods do |period| %>
+      <%= render  'period_fields', f: period %>
+    <% end %>
+    <%= link_to_add_fields "+add", f, :periods %>
+  </fieldset>
+  <fieldset>
+
+    <legend class="bluegray">Infomation
+    </legend>
+    <%= f.text_area :info  %>
+  </fieldset>
+  <fieldset>
+    <legend class="bluegray">Gallery <%= link_to "+add", new_admin_hotel_image_path(@hotel) %> </legend>
+    <ul class="thumbnails">
+      <% @hotel.hotel_images.each do |image| %>
+        <li class="span2">
+          <a class="thumbnail" href="#lightbox" data-toggle="lightbox">
+            <%=image_tag image.image.url(:tiny_thumb) %>
+          </a>
+          <div id="lightbox" class="lightbox hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class='lightbox-content'>
+              <%=image_tag image.image.url %>
+              <div class="lightbox-caption"><p>Your caption here</p></div>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+
+  </fieldset>
+
+  <fieldset>
+    <legend class="bluegray">Map
+      <p> Latitude: <%= f.text_field  :latitude %>
+          Longitude: <%= f.text_field  :longitude %>
+          Zoom: <%= f.text_field :zoom %>
+      </p>
+    </legend>
+
+    <div style="position:relative">
+      <div id="map_canvas" style="float: left; width: 100%; height: 400px;"></div>
+      <!-- <div id="pano" style="float: left; width: 50%; height: 400px;"></div> -->
+      <div style="clear: both;"></div>
+    </div>
+  </fieldset>
+
+  <div class="control-group">
+    <div class="form-actions">
+      <%= f.submit 'manage hotel', class: 'btn btn-primary btn-large' %>
+    </div>
+  </div>
+<% end %>

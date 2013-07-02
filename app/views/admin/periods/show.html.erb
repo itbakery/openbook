@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @period.name %>
+</p>
+
+<p>
+  <b>Valid from:</b>
+  <%= @period.valid_from %>
+</p>
+
+<p>
+  <b>Valid to:</b>
+  <%= @period.valid_to %>
+</p>
+
+<p>
+  <b>Isactive:</b>
+  <%= @period.isactive %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_period_path(@period) %> |
+<%= link_to 'Back', admin_periods_path %>
