@@ -35,61 +35,22 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
     <%= google_maps_api %>
   </head>
-  <body>
-
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">Openbook</a>
-          <div class="container nav-collapse">
-            <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-            <ul class="nav nav-pills pull-right">
-              <% if user_signed_in? %>
-                <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-              <% else %>
-                <li><%= link_to "Sign in", new_user_session_path %></li>
-                <li><%= link_to "Sign up", new_user_registration_path %></li>
-              <% end %>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-        <div class="row ">
-          <div class="span3 boxshadow white">
-            <div class="sidebar-nav">
-              <h3>Sidebar</h3>
-              <ul class="nav nav-list">
-                <li class="nav-header">Sidebar</li>
-                <li><%= link_to "Link1", "/path1"  %></li>
-                <li><%= link_to "Link2", "/path2"  %></li>
-                <li><%= link_to "Link3", "/path3"  %></li>
-              </ul>
-            </div><!--/.well -->
-          </div><!--/span-->
-          <div class="span9 boxshadow white">
-            <%= bootstrap_flash %>
-            <%= yield %>
-          </div>
-        </div><!--/row-->
-
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
-
-    </div> <!-- /container -->
-
+  <body class="kbank">
+    <table height="100%" width="100%">
+      <tbody>
+       <tr>
+          <td  valign="middle" align="center">
+            <div id="admin-holder">
+              <h1 id="">Administration</h1>
+              <hr />
+              <div class="">
+                   <%= yield %>
+              </div>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+</table>
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
