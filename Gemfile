@@ -17,7 +17,7 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
   gem 'less'
   gem 'less-rails'
-  gem 'twitter-bootstrap-rails'
+  gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
   gem 'uglifier', '>= 1.0.3'
   gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
   gem 'jquery-ui-rails'
