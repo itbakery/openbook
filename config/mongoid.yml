@@ -82,8 +82,8 @@ test:
 production:
   sessions:
     default:
-      host: localhost
-      port: 27017
       database: openbook_production
+      hosts:
+        - localhost:27017
       username: sitour
       password: password
