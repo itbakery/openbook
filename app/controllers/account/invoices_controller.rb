@@ -1,6 +1,7 @@
 class Account::InvoicesController < ApplicationController
   # GET /invoices
   # GET /invoices.json
+  layout 'account'
   before_filter  :authenticate_user!
   def index
     @invoices = Invoice.all
