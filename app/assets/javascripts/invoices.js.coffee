@@ -12,13 +12,13 @@ jQuery ->
     dateFormat: 'yy-mm-dd'
     numberOfMonths: 2
 
-#  $('#invoices').dataTable
-#    sDom: "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>"
-#    sPaginationType: "bootstrap"
-#  $('form').on 'click', '.remove_fields_invoice', (event) ->
-#    console.log("here")
-#    $(this).closest('tr').hide()
-#    event.preventDefault()
+  $('#invoices').dataTable
+    sDom: "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>"
+    sPaginationType: "bootstrap"
+  $('form').on 'click', '.remove_fields_invoice', (event) ->
+    console.log("here")
+    $(this).closest('tr').hide()
+    event.preventDefault()
 
   $('form').on 'click', '.add_fields', (event) ->
     time = new Date().getTime()
