@@ -80,8 +80,10 @@ test:
         retry_interval: 0
 
 production:
-  host: localhost
-  port: 27017
-  database: openbook_production
-  username: sitour
-  password: password
+  sessions:
+    default:
+      host: localhost
+      port: 27017
+      database: openbook_production
+      username: sitour
+      password: password
