@@ -98,6 +98,13 @@ class Account::InvoicesController < ApplicationController
     end
   end
 
+  def thankyou
+    respond_to do |format|
+      format.html {render  :layout => 'thankyou' }
+    end
+
+  end
+
   def confirmpayment
     @invoice = Invoice.where(invoice_no: params[:invoice_no]).first
 
