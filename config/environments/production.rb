@@ -28,10 +28,10 @@ Openbook::Application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
 
   # See everything in the log (default is :info)
-  # config.log_level = :debug
+  config.log_level = :info
 
   # Prepend all log lines with the following tags
   # config.log_tags = [ :subdomain, :uuid ]
@@ -43,7 +43,7 @@ Openbook::Application.configure do
   # config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  # config.action_controller.asset_host = "http://assets.example.com"
+  config.action_controller.asset_host = "http://sitourtravel.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
@@ -59,9 +59,4 @@ Openbook::Application.configure do
   config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners
-  config.active_support.deprecation = :notify
-  config.assets.precompile += Ckeditor.assets
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
 end
