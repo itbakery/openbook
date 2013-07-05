@@ -8,7 +8,6 @@ class InvoiceMailer < ActionMailer::Base
   #
   def confirm_payment(invoice)
     @invoice = invoice
-    @greeting = "Please confirm you order by clicking link below"
 
     mail to: "#{invoice.customer.firstname}<#{invoice.customer.email}>"
   end
