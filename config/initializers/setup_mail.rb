@@ -13,5 +13,5 @@ ActionMailer::Base.smtp_settings = {
 }
 
 #require 'development_mail_interceptor'
-ActionMailer::Base.default_url_options[:host] = "sitourtravel.com"
+#ActionMailer::Base.default_url_options[:host] = "sitourtravel.com"
 #Mail.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
