@@ -1,5 +1,6 @@
 class InvoiceMailer < ActionMailer::Base
-  default from: "from@example.com"
+  #default from: "from@example.com"
+  default from: "suwart@sitours.co.th"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -9,7 +10,7 @@ class InvoiceMailer < ActionMailer::Base
   def confirm_payment(invoice)
     @invoice = invoice
 
-    mail to: "#{invoice.customer.firstname}<#{invoice.customer.email}>"
+    mail to: "#{invoice.customer.firstname}<#{invoice.customer.email}>", subject: "confirm sitour's payment"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
