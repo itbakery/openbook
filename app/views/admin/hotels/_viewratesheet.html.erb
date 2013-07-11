@@ -1,0 +1,24 @@
+<% @pricesheets = ratesheet.pricesheets %>
+<% @pricesheets.each do |pricesheet| %>
+<p>
+   <span class="col1">
+    <%= pricesheet.date.strftime('%b %d, %Y')  %>
+   </span>
+   <span class="col1">
+    <%= pricesheet.day  %>
+   </span>
+   <span class="col1">
+    <%= pricesheet.minstay  %>
+   </span>
+   <span class="col1">
+    <%= pricesheet.price  %>
+   </span>
+
+   <span class="col1">
+    <%= pricesheet.message  %>
+   </span>
+   <span class="collast">
+    <%= pricesheet.isactive  %>
+   </span>
+ </p>
+ <% end %>

@@ -1,24 +1,12 @@
 Openbook::Application.routes.draw do
   devise_for :users
-
   resources :customers
-
-
   resources :invoicelines
   resources :invoices
-
-
   resources :pricesheets
-
-
   mount Ckeditor::Engine => '/ckeditor'
-
   resources :posts
-
-
   resources :images
-
-
   resources :ratesheets
   resources :periods
   resources :roomrates
@@ -50,12 +38,14 @@ Openbook::Application.routes.draw do
     resources :hotels do
       resources :images
       resources :ratesheets
+      get :create_ratesheet, on: :member
       post :create_ratesheet, on: :member
       put  :create_ratesheet, on: :member, to: "hotels#update_ratesheet"
       delete  :destroy_ratesheet, on: :member
       get :all_ratesheet, on: :member
       get :edit_ratesheet, on: :member
       get :hotelinfo, on: :member
+      get :viewratesheet, on: :member
       resources :pricesheets
     end
     resources :countries
@@ -77,6 +67,7 @@ Openbook::Application.routes.draw do
   root to: "home#underconstruct"
 
   match "confirmpayment/:invoice_no" =>  "account/invoices#confirmpayment"
+  match "admin/hotels/new" => "admin/hotels#new"
   #referece   params[:code]
   #{"invoice_no"=>"iv2013005"}
   # The priority is based upon order of creation:

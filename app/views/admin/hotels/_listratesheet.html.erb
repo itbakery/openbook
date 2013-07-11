@@ -1,16 +1,16 @@
 <% unless ratesheet.name.nil? %>
- <p>
-    <span class="col1"> <%= ratesheet.name %> </span>
-    <span class="col1"> <%= ratesheet.hotel.name1 %> </span>
+ <tr>
+    <td > <%= ratesheet.name %> </td>
+    <td > <%= ratesheet.hotel.name1 %> </td>
 
-    <span class="col1" > <%= ratesheet.roomtype.name %> </span>
+    <td  > <%= ratesheet.roomtype.name %> </td>
 
-    <span class="col1"> <%= ratesheet.roomrate.name %> </span>
-    <span class="col2"> <%= ratesheet.period.name %>  </span>
-    <span class="col2 collast">
+    <td > <%= ratesheet.roomrate.name %> </td>
+    <td > <%= ratesheet.period.name %>  </td>
+    <td >
       <%= link_to "<i class=\"icon-trash\"></i>".html_safe,destroy_ratesheet_admin_hotel_path(ratesheet),class: 'pull-right', method: :delete, data: { confirm: 'Are you sure?' } %>&nbsp;
 
       <%= link_to  "<i class=\"icon-pencil\"></i>".html_safe,edit_ratesheet_admin_hotel_path(ratesheet),class: 'pull-right',  :remote => true, 'data-toggle' => 'tab', 'data-target' => '#ratesheet' %> &nbsp;
-    </span>
-</p>
+    </td>
+</tr>
 <% end %>

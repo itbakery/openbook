@@ -1,1 +1,1 @@
-$('#pricesheetholder').html("<%= escape_javascript(render(@pricesheets)) %>")
+$('#pricesheetholder').html("<%= escape_javascript(render partial: 'admin/hotels/pricesheet', collection: @pricesheets, as: :pricesheet) %>")

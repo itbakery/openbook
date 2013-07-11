@@ -1,1 +1,2 @@
-$('#ratesheet').html("<%= escape_javascript(render 'admin/hotels/ratesheet', object:  @ratesheet) %>");
+$('#ratesheetholder').html("<%= escape_javascript(render 'admin/hotels/ratesheet', object:  @ratesheet, as: :ratesheet) %>");
+$('#pricesheetholder').html("<%= escape_javascript(render partial: 'admin/hotels/pricesheet', collection: @ratesheet.pricesheets, as: :pricesheet) %>")

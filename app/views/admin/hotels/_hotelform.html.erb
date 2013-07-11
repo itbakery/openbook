@@ -240,8 +240,8 @@
   </fieldset>
 
 
-  <legend class="bluegray">Periods
-  </legend>
+    <legend class="bluegray"> Period
+    </legend>
   <fieldset>
     <%= f.fields_for :periods do |period| %>
       <%= render  'period_fields', f: period %>
@@ -252,10 +252,10 @@
 
     <legend class="bluegray">Infomation
     </legend>
-    <%= f.text_area :info  %>
+    <%= f.cktext_area :info  %>
   </fieldset>
   <fieldset>
-    <legend class="bluegray">Gallery <%= link_to "+add", new_admin_hotel_image_path(@hotel) %> </legend>
+    <legend class="bluegray">Gallery  <%= link_to "+add", new_admin_hotel_image_path(@hotel) unless @hotel.id.nil? %> </legend>
     <ul class="thumbnails">
       <% @hotel.hotel_images.each do |image| %>
         <li class="span2">

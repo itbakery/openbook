@@ -21,6 +21,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
   gem 'jquery-ui-rails'
+  gem 'ckeditor', git: 'git://github.com/galetahub/ckeditor'
 end
 
 gem 'jquery-rails'
@@ -36,7 +37,9 @@ gem 'thin'
 gem 'mail'
 gem 'devise'
 gem 'cancan'
+gem 'best_in_place'
 gem 'rolify'
+gem 'kaminari'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -49,6 +52,5 @@ gem 'rolify'
 # Deploy with Capistrano
 gem 'capistrano'
 gem 'rvm-capistrano'
-gem 'ckeditor'
 # To use debugger
 # gem 'debugger'

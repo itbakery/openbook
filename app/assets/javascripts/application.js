@@ -15,9 +15,12 @@
 //= require jquery_ujs
 //= require jquery.ui.datepicker
 //= require twitter/bootstrap
+//= require ckeditor_fix
 //= require ckeditor/init
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
+//= require jquery.purr
+//= require best_in_place
 //= require_tree .
 var set_stars = function(stars){
    for(i=1; i<=5; i++){
@@ -31,6 +34,8 @@ var set_stars = function(stars){
 }
 
 $(document).ready(function() {
+
+   $('a').tooltip();
 
    if ($('#hotel_info').length > 0) {
      var data = $('textarea');

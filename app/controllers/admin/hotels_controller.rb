@@ -3,6 +3,7 @@ class Admin::HotelsController < ApplicationController
   # GET /hotels
   # GET /hotels.json
   def index
+    @hotel = Hotel.new
     @hotels = Hotel.all
 
     respond_to do |format|
@@ -152,4 +153,13 @@ class Admin::HotelsController < ApplicationController
       end
     end
   end
+
+
+  def viewratesheet
+   @ratesheet = Ratesheet.find(params[:id])
+   respond_to do |format|
+     format.js
+   end
+  end
+
 end

@@ -126,7 +126,7 @@
       <div class="control-group">
         <%= f.label :MailsContent, :class => 'control-label' %>
         <div class="controls">
-          <%= f.text_area :description, :class => 'text_field span6', rows: 5 %>
+          <%= f.text_area :description, :class => 'text_field span7', rows: 3 %>
           <span class="help-block"> Email message will show in Email to Customer to confirm payment's details </span>
         </div>
       </div>
@@ -135,24 +135,21 @@
   </div>
   <!-- part 3 -->
   <div class="row">
-    <div style="margin-left: 40px;" class="span8">
-      <fieldset>
-        <div class="table">
-          <div class="tr">
-            <div style="width:5%; text-align: center;" class="td" >No</div>
-            <div style="width:40%; text-align: center;" class="td" >Product</div>
-            <div style="width:5%; text-align: center;"  class="td" >qty</div>
-            <div style="width:20%; text-align: center;" class="td" >unitprice</div>
-            <div style="width:25%; text-align: center; " class="td" >total</div>
-            <div style="width:2%; text-align: center;"  class="td" ></div>
-
-          </div>
-        </div>
+    <div class="span8">
+      <table class="table table-bordered" style="border-collape:collapse; ">
+        <tr>
+          <th style="width:10%"  class="span1">No</th>
+          <th style="width:30%" class="span3">Product</th>
+          <th style="width:20%"  class="span1">quantity</th>
+          <th style="width:20%"  class="span1">unitprice</th>
+          <th style="width:20%"  class="span2">total</th>
+          <th style="width:10%"  ></th>
+        </tr>
         <%= f.fields_for :invoicelines do |inline| %>
-          <%= render :partial => 'invoiceline_fields', locals: {f: inline} %>
+            <%= render :partial => 'invoiceline_fields', locals: {f: inline} %>
         <% end %>
-        <%= link_to_add_fields  "+ invoiceline", f, :invoicelines %>
-      </fieldset>
+          <%= link_to_add_fields  "Add invoiceline", f, :invoicelines %>
+     </table>
     </div>
   </div>
 
@@ -191,7 +188,6 @@
         <%= f.label :grandtotal, :class => 'control-label' %>
         <div class="controls">
           <%= f.text_field :grandtotal, :class => 'text_field' %>
-          <span class="help-block"> to bank  </span>
         </div>
       </div>
 

@@ -12,12 +12,10 @@ jQuery ->
     dateFormat: 'yy-mm-dd'
     numberOfMonths: 2
 
-  $('#invoices').dataTable
-    sDom: "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>"
-    sPaginationType: "bootstrap"
-  $('form').on 'click', '.remove_fields_invoice', (event) ->
-    console.log("here")
-    $(this).closest('tr').hide()
+
+  $('form').on 'click', '.remove_fields', (event) ->
+    $(this).prev('input[type=hidden]').val('1')
+    $(this).closest('fieldset').hide()
     event.preventDefault()
 
   $('form').on 'click', '.add_fields', (event) ->
@@ -25,3 +23,4 @@ jQuery ->
     regexp = new RegExp($(this).data('id'), 'g')
     $(this).before($(this).data('fields').replace(regexp, time))
     event.preventDefault()
+

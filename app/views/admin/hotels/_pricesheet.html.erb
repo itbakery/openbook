@@ -1,1 +1,10 @@
-<p>test</p>
+<% @pricesheet = pricesheet %>
+<tr>
+  <td style="width: 10%">  </td>
+  <td style="width: 30%"> <%= pricesheet.date.strftime('%b %d, %Y')  %> </td>
+  <td style="width: 20%"> <%= pricesheet.day  %> </td>
+  <td style="width: 10%"><%= best_in_place @pricesheet, :minstay  %> </td>
+  <td style="width: 10%"> <%= best_in_place @pricesheet, :price  %> </td>
+  <td style="width: 20%"> <%= best_in_place @pricesheet, :message  %> </td>
+  <td style="width: 10%"> <%= best_in_place @pricesheet, :isactive  %> </td>
+</tr>
