@@ -147,11 +147,6 @@ table.table td.first {
     list-style: none;
 }
 
-
-.borderradius {
-    .border-radius()
-}
-
 .bluegray {
     background-color:#00aced;
 }

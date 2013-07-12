@@ -2871,14 +2871,13 @@ a [class^="icon-"],a [class*=" icon-"]{cursor:pointer;}
   */
 // Border Radius
 .boxshadow {
-   -webkit-border-radius: 5px;
-     -moz-border-radius: 5px;
-          border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.25);
-     -moz-box-shadow: 0 1px 3px rgba(0,0,0,.25);
-          box-shadow: 0 1px 3px rgba(0,0,0,.25);
-
-    margin: 5px 0px 10px 20px;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,.25);
+  box-shadow: 0 1px 3px rgba(0,0,0,.25);
+  margin: 5px 0px 10px 20px;
 }
 
 
@@ -3010,11 +3009,6 @@ table.table td.first {
     font-size: 24px;
     float: left;
     list-style: none;
-}
-
-
-.borderradius {
-    .border-radius()
 }
 
 .bluegray {
