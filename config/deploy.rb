@@ -28,7 +28,7 @@ set :branch, "master"
 #set :rvm_ruby_string, "ruby-1.9.3-p392"
 #set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"")
 #set :bundle_cmd , "/home/deploy/.rvm/gems/ruby-1.9.3-p194@mrtablueline/bin/bundle"
-set_default :rvm_type, :user
+set :rvm_type, :user
 
 #============
 
