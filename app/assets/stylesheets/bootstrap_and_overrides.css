@@ -6,41 +6,17 @@
   =require twitter-bootstrap-static/fontawesome
   */
 // Border Radius
-.border-radius (@radius: 5px) {
-  -webkit-border-radius: @radius;
-     -moz-border-radius: @radius;
-          border-radius: @radius;
+.boxshadow {
+   -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.25);
+     -moz-box-shadow: 0 1px 3px rgba(0,0,0,.25);
+          box-shadow: 0 1px 3px rgba(0,0,0,.25);
+
+    margin: 5px 0px 10px 20px;
 }
 
-// Drop shadows
-.box-shadow (@shadow: 0 1px 3px rgba(0,0,0,.25)) {
-  -webkit-box-shadow: @shadow;
-     -moz-box-shadow: @shadow;
-          box-shadow: @shadow;
-}
-
-// Transitions
-.transition (@transition) {
-     -webkit-transition: @transition;
-        -moz-transition: @transition;
-         -ms-transition: @transition;
-          -o-transition: @transition;
-             transition: @transition;
-}
-
-// Clearfix for clearing floats like a boss h5bp.com/q
-.clearfix() {
-  zoom: 1;
-  &:before,
-  &:after {
-    display: table;
-    content: "";
-    zoom: 1;
-  }
-  &:after {
-    clear: both;
-  }
-}
 
 input[type=text] {
     width: 100%;
@@ -141,12 +117,6 @@ table.table td.first {
     background-color: #00A0D1;
     background-image: linear-gradient(#00A0D1, #008DB8);
 }
-.boxshadow {
-    .box-shadow();
-    .border-radius();
-    margin: 5px 0px 10px 20px;
-}
-
 .content-box-header {
     background-color: whitesmoke;
     border-bottom: 1px solid #E8E8E8;
