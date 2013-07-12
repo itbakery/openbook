@@ -1,5 +1,6 @@
 require "bundler/capistrano"
 require 'rvm/capistrano'
+load 'deploy/assets'
 
 default_run_options[:pty] = true
 set :application, "openbook"
@@ -10,19 +11,20 @@ set :user, "deploy"
 set :scm, :git
 set :run_method, :run
 set :deploy_to, "/home/deploy/#{application}"
+set :deloy_via, :remote_cache
 set :scm_verbose,true
 set :branch, "master"
 
 #==== intetration with capistrano
 #$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 #set :rvm_type, :system
-set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"")
+#set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"")
 #set :rvm_ruby_string, 'ruby-1.9.3-p429@openbook'
 #set :rvm_ruby_string, 'ruby-1.9.3'
-set :rvm_type, :user
-set :rvm_bin_path, "/home/deploy/.rvm/bin"
+#set :rvm_type, :user
+#set :rvm_bin_path, "/home/deploy/.rvm/bin"
 #before 'deploy', 'rvm:create_gemset'
-set :rvm_ruby_string, "ruby-1.9.3-p429@openbook"
+#set :rvm_ruby_string, "ruby-1.9.3-p429@openbook"
 #set :rvm_ruby_string, "ruby-1.9.3-p392"
 #set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"")
 #set :bundle_cmd , "/home/deploy/.rvm/gems/ruby-1.9.3-p194@mrtablueline/bin/bundle"
