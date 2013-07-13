@@ -21,7 +21,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
   gem 'jquery-ui-rails'
-  gem 'ckeditor', :require => 'ckeditor-rails'
+  gem 'ckeditor'
 end
 
 gem 'jquery-rails'
