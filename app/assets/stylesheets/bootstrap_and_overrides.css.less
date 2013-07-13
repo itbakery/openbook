@@ -1,20 +1,19 @@
-//@import "twitter/bootstrap/bootstrap";
-//@import "twitter/bootstrap/responsive";
-@import "cosmo/bootswatch.less";
+@import "twitter/bootstrap/bootstrap";
+@import "twitter/bootstrap/responsive";
+
 // Set the correct sprite paths
-@iconSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings.png");
-@iconWhiteSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings-white.png");
+@iconSpritePath: image-url("twitter/bootstrap/glyphicons-halflings.png");
+@iconWhiteSpritePath: image-url("twitter/bootstrap/glyphicons-halflings-white.png");
 
 // Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
-// Note: If you use asset_path() here, your compiled bootstrap_and_overrides.css will not
-//       have the proper paths. So for now we use the absolute path.
-@fontAwesomeEotPath: asset-path("fontawesome-webfont.eot?v=3.0.2");
-@fontAwesomeEotPath_iefix: asset-path("fontawesome-webfont.eot?#iefix&v=3.0.2");
-@fontAwesomeWoffPath: asset-path("fontawesome-webfont.woff?v=3.0.2");
-@fontAwesomeTtfPath: asset-path("fontawesome-webfont.ttf?v=3.0.2");
+@fontAwesomeEotPath: asset-url("fontawesome-webfont.eot");
+@fontAwesomeEotPath_iefix: asset-url("fontawesome-webfont.eot?#iefix");
+@fontAwesomeWoffPath: asset-url("fontawesome-webfont.woff");
+@fontAwesomeTtfPath: asset-url("fontawesome-webfont.ttf");
+@fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
 
 // Font Awesome
-//@import "fontawesome";
+@import "fontawesome/font-awesome";
 
 // Glyphicons
 //@import "twitter/bootstrap/sprites.less";
@@ -29,7 +28,6 @@
 //
 // Example:
 // @linkColor: #ff0000;
-
 // Border Radius
 .border-radius(@radius: 5px) {
   -webkit-border-radius: @radius;
@@ -78,7 +76,8 @@ input[type=text] {
 
 body {
 	padding-top: 60px;
-    background-image: url(background-world-map.gif);
+    background-color: #c0deed;
+   // background-image: url(background-world-map.gif);
 }
 
 
@@ -158,10 +157,31 @@ table.table td.first {
     width:100px;
 }
 //.row [class*="span"] {
+
 //	.box-shadow();
 //}
-.boxshadow {	.box-shadow();
-    margin: 5px 0px 10px 0px;
+.navbar-inner {
+    background-color: #00A0D1;
+    background-image: linear-gradient(#00A0D1, #008DB8);
+}
+.boxshadow {
+    .box-shadow();
+    .border-radius();
+    margin: 5px 0px 10px 20px;
+}
+
+.content-box-header {
+    background-color: whitesmoke;
+    border-bottom: 1px solid #E8E8E8;
+    color: #444444;
+    font-size: 1.2em;
+    font-weight: bold;
+    height: 35px;
+    line-height: 35px;
+    margin-top: 0;
+    padding-left: 10px;
+    text-align: left;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
 
 #footer-menu ul {
@@ -187,7 +207,7 @@ table.table td.first {
 }
 
 .bluegray {
-    background-color:#6699CC;
+    background-color:#00aced;
 }
 .babyblue {
     background-color:#ececec;
@@ -197,16 +217,71 @@ table.table td.first {
     background-color: #FFFFFF;
 }
 
-.row .form-horizontal .control-label {
-    float: left;
-    padding-top: 5px;
-    text-align: right;
-    width: 120px;
+.boxHeader {
+    background: none repeat scroll 0 0 #6A6A6A;
 }
 
-.row .form-horizontal .controls {
-    margin-left: 140px;
+// main box header
+//  <div class="header">Header</div>
+//  <div class="mainbody">
+//  <div class="footer">Footer</div>
+//
+//
+//
+.mainbody,
+.header,
+.footer {
+    padding: 5px;
 }
+.mainbody {
+    margin-top: 0;
+    min-height: 150px;
+    max-height: 388px;
+    overflow: auto;
+}
+.header {
+    height: 40px;
+    background-color: #808080;
+    height: 40px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.subheader {
+    height: 40px;
+    border-bottom: 1px solid #EEE;
+    background-color: #c0c0c0;
+    height: 40px;
+    padding-top: 5px;
+}
+
+.footer {
+    height: 40px;
+    background-color: whiteSmoke;
+    border-top: 1px solid #DDD;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+
+//.row .form-horizontal .control-label {
+//    float: left;
+//    padding-top: 5px;
+//    text-align: right;
+//    width: 120px;
+//}
+
+//.row .form-horizontal .controls {
+//    margin-left: 140px;
+//}
 .rating {
     margin: auto 0;
 }
@@ -223,37 +298,11 @@ table.table td.first {
 
 }
 
-/* Convert table to div    */
-  .table {
-      width: 406px; /* col1 + col2 + col3 + padding + border */
-      border-top: 4px solid #e3e7e7; /* เส้นกรอบด้านบน */
-      background-color: #FFF; /* สีพื้นของตาราง */
-  }
-  .table p {
-      clear: both;
-      width: 100%;
-      margin: 0;
-  }
-  .table span {
-      float: left;
-      padding: 0 10px; /* padding ของแต่ละคอลัมน์ */
-      border-left: 1px solid #e3e7e7; /* เส้นกรอบด้านซ้ายของแต่ละเซล */
-      border-bottom: 1px solid #e3e7e7; /* เส้นกรอบด้านล่างของแต่ละเซล */
-  }
-  .table span.col1 {
-      width: 110px; /* ความกว้างของคอลัมน์ 1 */
-  }
-  .table span.col2 {
-      width: 186px; /* ความกว้างของคอลัมน์ 2 */
-  }
-  .table span.col3 {
-      width: 110px; /* ความกว้างของคอลัมน์ 3 */
-      border-right: 1px solid #e3e7e7; /* เส้นกรอบด้านขวาของแต่ละเซล */
-  }
-  .table span.collast {
-      width: 110px; /* ความกว้างของคอลัมน์ 3 */
-      border-right: 1px solid #e3e7e7; /* เส้นกรอบด้านขวาของแต่ละเซล */
-  }
+//Default is 20px I beleive, I use 8px
+
+.form-horizontal .control-group {
+    margin-bottom: 4px;
+}
 
   /* Fix Google map */
   #map img {
@@ -329,4 +378,62 @@ ul.ui-autocomplete {
   height: auto;
   margin-bottom: 15px;
   padding: 7px 9px;
+}
+
+
+.purr {
+  position: fixed;
+  top: 30px;
+  right: 100px;
+  width: 250px;
+  padding: 20px;
+  background-color: #FCC;
+  border: solid 2px #C66;
+  &:first-letter { text-transform: uppercase; }
+}
+
+table.t1 {
+  width: 100%;
+  border: 1px solid #999;
+  text-align: left;
+  border-collapse: collapse;
+  margin: 0 0 1em 0;
+  caption-side: top;
+}
+
+ table.t1 caption, table.t1 td, table.t1 th {
+  padding: 0.3em;
+}
+
+ table.t1 th, table.t1 td {
+  border-bottom: 1px solid #999;
+}
+
+ table.t1 caption {
+  font-weight: bold;
+  font-style: italic;
+}
+
+div.table {border: 1px solid #E5E4E2; display: table; margin: 0px 0px; }
+div.tr {border: 0px solid #E5E4E2; display: table-row; border-top: none; border-bottom: none; margin-top: -1px }
+div.td {border: 0px solid #E5E4E2;  display: table-cell; border-top: none; border-bottom: none }
+
+input[type="text"] {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    padding-bottom: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 4px;
+}
+
+select {
+  width: 205px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
 }
