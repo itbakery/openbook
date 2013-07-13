@@ -26,7 +26,7 @@ set :rvm_ruby_string, 'ruby-1.9.3-p448@openbook'
 #set :rvm_ruby_string, "ruby-1.9.3-p429@openbook"
 #set :rvm_ruby_string, "ruby-1.9.3-p392"
 #set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"")
-set :bundle_cmd , "/home/deploy/.rvm/gems/ruby-1.9.3-p448@openbook/bin/bundle"
+#set :bundle_cmd , "/home/deploy/.rvm/gems/ruby-1.9.3-p448@openbook/bin/bundle"
 set :rvm_type, :user
 #============
 
@@ -56,7 +56,6 @@ namespace :deploy do
   task :bundle_install, :roles => :app do
     run "cd #{current_path} && LC_ALL='en_US.UTF-8' bundle install"
   end
-
   desc "reload the database with seed data"
   task :seed do
     run "cd #{current_path} && bundle exec rake db:seed RAILS_ENV=#{rails_env}"
