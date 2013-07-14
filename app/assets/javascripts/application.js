@@ -16,7 +16,7 @@
 //= require jquery.ui.datepicker
 //= require twitter/bootstrap
 //= require ckeditor_fix
-//= require ckeditor/init
+//= require ckeditor/init.js
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require jquery.purr
