@@ -31471,6 +31471,7 @@ jQuery.fn.best_in_place = function() {
   });
 
 }).call(this);
+var CKEDITOR_BASEPATH = '/assets/ckeditor/';
 (function() {
 
 
