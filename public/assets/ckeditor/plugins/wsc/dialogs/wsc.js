@@ -3,6 +3,7 @@
  For licensing, see LICENSE.html or http://ckeditor.com/license
 */
 
+
 var ManagerPostMessage=function(){return{init:function(b){document.addEventListener?window.addEventListener("message",b,!1):window.attachEvent("onmessage",b)},send:function(b){var g=Object.prototype.toString;fn=b.fn||null;id=b.id||"";target=b.target||window;message=b.message||{id:id};"[object Object]"==g.call(b.message)&&(b.message.id||(b.message.id=id),message=b.message);b=JSON.stringify(message,fn);target.postMessage(b,"*")}}},tools={hash:{create:function(b,g){return JSON.stringify(b,g||null)},
 parse:function(b,g){return JSON.parse(b,g||null)}},filter4html:function(b){return b.replace(/"/g,"&quot;").replace(/'/g,"&#146;")},setCookie:function(b,g,d){var d=d||{},e=d.expires;if("number"==typeof e&&e){var f=new Date;f.setTime(f.getTime()+1E3*e);e=d.expires=f}e&&e.toUTCString&&(d.expires=e.toUTCString());var g=encodeURIComponent(g),b=b+"="+g,j;for(j in d)b+="; "+j,g=d[j],!0!==g&&(b+="="+g);document.cookie=b},getCookie:function(b){return(b=document.cookie.match(RegExp("(?:^|; )"+b.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g,
 "\\$1")+"=([^;]*)")))?decodeURIComponent(b[1]):void 0},deleteCookie:function(b){setCookie(b,"",{expires:-1})}},optionsDataObject={},NS={},nameNode=null;NS.targetFromFrame={};NS.wsc_customerId=CKEDITOR.config.wsc_customerId;NS.cust_dic_ids=CKEDITOR.config.wsc_customDictionaryIds;NS.userDictionaryName=CKEDITOR.config.wsc_userDictionaryName;NS.defaultLanguage=CKEDITOR.config.defaultLanguage;NS.LocalizationComing={};function OptionsConfirm(b){b&&nameNode.setValue("")}
