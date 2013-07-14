@@ -17119,6 +17119,7 @@ $.datepicker.version = "1.10.3";
 
 
 
+var CKEDITOR_BASEPATH = '/assets/ckeditor/';
 
 
 
@@ -36962,7 +36963,6 @@ CKEDITOR.stylesSet.add( 'default', [
 	{ name: 'Square Bulleted List',	element: 'ul',		styles: { 'list-style-type': 'square' } }
 ]);
 
-var CKEDITOR_BASEPATH = '/assets/ckeditor/';
 (function() {
 
 
@@ -37630,6 +37630,7 @@ $(document).ready( function () {
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+
 
 
 
