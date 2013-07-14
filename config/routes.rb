@@ -4,7 +4,7 @@ Openbook::Application.routes.draw do
   resources :invoicelines
   resources :invoices
   resources :pricesheets
-  mount Ckeditor::Engine => '/ckeditor'
+  #mount Ckeditor::Engine => '/ckeditor'
   resources :posts
   resources :images
   resources :ratesheets
