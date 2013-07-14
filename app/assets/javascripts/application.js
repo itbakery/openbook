@@ -17,6 +17,7 @@
 //= require twitter/bootstrap
 //= require ckeditor_fix
 //= require ckeditor/init
+//= require ckeditor/ckeditor
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require jquery.purr
