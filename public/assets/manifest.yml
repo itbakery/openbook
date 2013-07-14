@@ -39,8 +39,8 @@ status_bg.png: status_bg-367258a0647550e55c6f7a33e91257a6.png
 status_bg/index.png: status_bg-367258a0647550e55c6f7a33e91257a6.png
 underconstruct.png: underconstruct-16f8fc4dfdafa41dcc91650cc83b1d09.png
 underconstruct/index.png: underconstruct-16f8fc4dfdafa41dcc91650cc83b1d09.png
-application.js: application-9c9f37c7d8c2165d750ca206850ee503.js
-application/index.js: application-9c9f37c7d8c2165d750ca206850ee503.js
+application.js: application-0471545446e43b9e98e31fc3e92fa040.js
+application/index.js: application-0471545446e43b9e98e31fc3e92fa040.js
 application.css: application-888a92f1491cf318a4dbdce63c54fb95.css
 application/index.css: application-888a92f1491cf318a4dbdce63c54fb95.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
