@@ -29,42 +29,6 @@
 // Example:
 // @linkColor: #ff0000;
 // Border Radius
-.border-radius(@radius: 5px) {
-  -webkit-border-radius: @radius;
-     -moz-border-radius: @radius;
-          border-radius: @radius;
-}
-
-// Drop shadows
-.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
-  -webkit-box-shadow: @shadow;
-     -moz-box-shadow: @shadow;
-          box-shadow: @shadow;
-}
-
-// Transitions
-.transition(@transition) {
-     -webkit-transition: @transition;
-        -moz-transition: @transition;
-         -ms-transition: @transition;
-          -o-transition: @transition;
-             transition: @transition;
-}
-
-// Clearfix for clearing floats like a boss h5bp.com/q
-.clearfix() {
-  zoom: 1;
-  &:before,
-  &:after {
-    display: table;
-    content: "";
-    zoom: 1;
-  }
-  &:after {
-    clear: both;
-  }
-}
-
 input[type=text] {
     width: 100%;
     box-sizing: border-box;
@@ -164,11 +128,7 @@ table.table td.first {
     background-color: #00A0D1;
     background-image: linear-gradient(#00A0D1, #008DB8);
 }
-.boxshadow {
-    .box-shadow();
-    .border-radius();
-    margin: 5px 0px 10px 20px;
-}
+
 
 .content-box-header {
     background-color: whitesmoke;
@@ -202,9 +162,6 @@ table.table td.first {
 }
 
 
-.borderradius {
-    .border-radius()
-}
 
 .bluegray {
     background-color:#00aced;
