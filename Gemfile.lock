@@ -214,6 +214,7 @@ DEPENDENCIES
   kaminari
   less
   less-rails
+  libv8
   mail
   mini_magick
   mongoid
