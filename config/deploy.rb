@@ -10,7 +10,7 @@ set :user, "deploy"
 set :scm, :git
 set :run_method, :run
 set :deploy_to, "/home/deploy/#{application}"
-set :deloy_via, :remote_cache
+#set :deloy_via, :remote_cache
 set :scm_verbose,true
 set :branch, "master"
 
