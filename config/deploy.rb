@@ -20,7 +20,6 @@ set :branch, "master"
 #set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"")
 set :rvm_ruby_string, 'ruby-1.9.3-p448@openbook'
 #set :rvm_ruby_string, 'ruby-1.9.3'
-set :rvm_type, :user
 #set :rvm_bin_path, "/home/deploy/.rvm/bin"
 #before 'deploy', 'rvm:create_gemset'
 #set :rvm_ruby_string, "ruby-1.9.3-p429@openbook"
