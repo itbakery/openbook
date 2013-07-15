@@ -69,6 +69,11 @@ namespace :deploy do
   task :bundle_update, :roles => :app do
     run "cd #{current_path} && LC_ALL='en_US.UTF-8' bundle update"
   end
+
+  desc "Update"
+  task :update_codde, :roles => :app do
+    run "cd #{release_path}; RAILS_ENV=production rake assets:precompile"
+  end
   namespace :rvm do
     # Set up .rvmrc
     # Note, not using method described in:
