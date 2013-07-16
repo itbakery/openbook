@@ -43,8 +43,8 @@ application.js: application-b8dd201e52462db2ecfe059577bbab24.js
 application/index.js: application-b8dd201e52462db2ecfe059577bbab24.js
 ckeditor.tar.gz: ckeditor.tar-e4adbd9cff46ce4e09138cdfa0c457da.gz
 ckeditor/index.tar.gz: ckeditor.tar-e4adbd9cff46ce4e09138cdfa0c457da.gz
-application.css: application-fb55dbe31e807fed1d691f32eb86fcae.css
-application/index.css: application-fb55dbe31e807fed1d691f32eb86fcae.css
+application.css: application-3b9543e7a09dd399a6a900a1e2482906.css
+application/index.css: application-3b9543e7a09dd399a6a900a1e2482906.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 ckeditor/application.js: ckeditor/application-27934207b401893aa148fa42c74a8ac2.js
