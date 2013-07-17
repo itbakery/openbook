@@ -39,8 +39,8 @@ status_bg.png: status_bg-367258a0647550e55c6f7a33e91257a6.png
 status_bg/index.png: status_bg-367258a0647550e55c6f7a33e91257a6.png
 underconstruct.png: underconstruct-16f8fc4dfdafa41dcc91650cc83b1d09.png
 underconstruct/index.png: underconstruct-16f8fc4dfdafa41dcc91650cc83b1d09.png
-application.js: application-294be2b7367ae89f21c4aab527ae87da.js
-application/index.js: application-294be2b7367ae89f21c4aab527ae87da.js
+application.js: application-b8b82811b95767b81707f15989f1967b.js
+application/index.js: application-b8b82811b95767b81707f15989f1967b.js
 ckeditor.tar.gz: ckeditor.tar-e4adbd9cff46ce4e09138cdfa0c457da.gz
 ckeditor/index.tar.gz: ckeditor.tar-e4adbd9cff46ce4e09138cdfa0c457da.gz
 application.css: application-3b9543e7a09dd399a6a900a1e2482906.css
