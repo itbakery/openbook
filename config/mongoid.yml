@@ -85,5 +85,5 @@ production:
       database: openbook_production
       hosts:
         - localhost:27017
-      username: sitour
-      password: password
+      #username: sitour
+      #password: password
