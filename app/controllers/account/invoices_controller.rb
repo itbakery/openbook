@@ -90,6 +90,8 @@ class Account::InvoicesController < ApplicationController
 
   def sendconfirm
     @invoice = Invoice.find(params[:id])
+    @invoice.senddate= Time.now
+    @invoice.save
     #mailer object
     InvoiceMailer.confirm_payment(@invoice).deliver
     #render nothing: true
@@ -107,11 +109,10 @@ class Account::InvoicesController < ApplicationController
 
   def confirmpayment
     @invoice = Invoice.where(invoice_no: params[:invoice_no]).first
+    @invoice.status="return"
+    @invoice.save
 
     if @invoice
-      @invoice.status="return"
-      @invoice.senddate= Time.now
-      @invoice.save
       if @invoice.currency.code =="th_TH"
         @bank_arg = {
           "MERCHANT2"=>"451005032751001",
