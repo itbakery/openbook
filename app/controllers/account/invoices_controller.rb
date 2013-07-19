@@ -110,6 +110,7 @@ class Account::InvoicesController < ApplicationController
 
     if @invoice
       @invoice.status="return"
+      @invoice.senddate= Time.now
       @invoice.save
       if @invoice.currency.code =="th_TH"
         @bank_arg = {

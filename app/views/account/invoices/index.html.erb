@@ -61,7 +61,12 @@
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
-                    <%= link_to "sendmail", sendconfirm_account_invoice_path(invoice), {:remote => true} %>
+          <% if invoice.status == "return" %>
+             <%= link_to "resend..mail", sendconfirm_account_invoice_path(invoice), {:remote => true} %>
+             <%= "Lastest senddate #{invoice.senddate.strftime('%a, %b %d, %Y')}" %>
+          <% else %>
+             <%= link_to "send..mail", sendconfirm_account_invoice_path(invoice), {:remote => true} %>
+          <% end %>
         </td>
       </tr>
     <% end %>
