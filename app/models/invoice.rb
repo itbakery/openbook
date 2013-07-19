@@ -18,7 +18,7 @@ class Invoice
   field :grandtotal, type: BigDecimal
   field :status, type: String
   field :note, type: String
-
+  field :senddate, type: Time
   #add field name customer_firstname
   def customer_fullname
     firstname = customer.try(:firstname)
