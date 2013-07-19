@@ -63,7 +63,7 @@
                       :class => 'btn btn-mini btn-danger' %>
           <% if invoice.status == "return" %>
              <%= link_to "resend..mail", sendconfirm_account_invoice_path(invoice), {:remote => true} %>
-             <%= "Lastest senddate #{invoice.senddate.strftime('%a, %b %d, %Y')}" if invoice.senddate %>
+             <%= "Lastest senddate #{invoice.senddate.strftime('%a, %b %d, %Y')}" unless invoice.senddate.nil? %>
           <% else %>
              <%= link_to "send..mail", sendconfirm_account_invoice_path(invoice), {:remote => true} %>
           <% end %>
