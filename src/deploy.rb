@@ -75,16 +75,6 @@ namespace :deploy do
   task :update_codde, :roles => :app do
     run "cd #{release_path}; RAILS_ENV=production rake assets:precompile"
   end
-  namespace :rvm do
-    # Set up .rvmrc
-    # Note, not using method described in:
-    #   https://rvm.beginrescueend.com/integration/capistrano/
-    # We want to use RVM only on the app server, so better to set up and bless an .rvmrc file
-    task :setup, :roles => :app do
-      run "cd #{latest_release}; rvm use 1.9.3@#{application} --rvmrc --create && rvm rvmrc trust"
-    end
-  end
-
   desc "install the necessary prerequisites"
   task :bundle_install, :roles => :app do
     #run "cd #{release_path} && bundle install"
@@ -104,10 +94,22 @@ namespace :deploy do
     desc "#{t} task is a no-op with mod_rails"
     task t, :roles => :app do ; end
   end
+
+  namespace :rvm do
+    # Set up .rvmrc
+    # Note, not using method described in:
+    #   https://rvm.beginrescueend.com/integration/capistrano/
+    # We want to use RVM only on the app server, so better to set up and bless an .rvmrc file
+  end
+
   desc "trust rvm"
   namespace :rvm do
     task :trust_rvmrc do
       run "rvm rvmrc trust #{release_path}"
     end
+    task :setup, :roles => :app do
+      run "cd #{latest_release}; rvm use 1.9.3@#{application} --rvmrc --create && rvm rvmrc trust"
+    end
+
   end
 end

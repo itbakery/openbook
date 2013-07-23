@@ -21,11 +21,9 @@ set :use_sudo, false
 set :deploy_to, "/home/deploy/#{application}"
 set :deploy_via, :remote_cache
 ssh_options[:forward_agent] = true
-set :branch, "master"
 
 #repo detail
 set :scm, :git
-set :scm_username, "itbakery"
 set :repository,  'git@github.com:itbakery/openbook.git'
 set :branch, "master"
 # if you want to clean up old releases on each deploy uncomment this:
@@ -36,8 +34,15 @@ after "deploy:restart", "deploy:cleanup"
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
-   task :start do ; end
-   task :stop do ; end
+
+  task :start, :roles => :app do
+    run "touch #{current_release}/tmp/restart.txt"
+  end
+
+  task :stop, :roles => :app do
+    # Do nothing.
+  end
+
    task :restart, :roles => :app, :except => { :no_release => true } do
      run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
    end
