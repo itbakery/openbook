@@ -2,7 +2,6 @@
 require 'bundler/capistrano'
 
 set :rvm_ruby_string,  ENV['GEM_HOME'].gsub(/.*\//,"")
-$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require 'rvm/capistrano'
 
 set :application, 'openbook'
