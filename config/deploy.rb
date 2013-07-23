@@ -12,10 +12,13 @@ role :app, "203.146.127.179"                          # This may be the same as 
 role :db,  "203.146.127.179", :primary => true # This is where Rails migrations will run
 role :db,  "203.146.127.179"
 
+set :rails_env, :production
 default_run_options[:pty] = true
-set :rvm_type, :user
+set :rvm_ruby_string, '1.9.3'
+set :rvm_type, :system
 set :keep_releases, 5
 set :user, "deploy"
+set :use_sudo, false
 set :scm, :git
 set :deploy_to, "/home/deploy/#{application}"
 set :branch, "master"
