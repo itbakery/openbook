@@ -11,5 +11,5 @@ def disable_rvm_shell(&block)
 end
 
 disable_rvm_shell do
-    run "rvm gemset use 1.9.3@openbook"
+    run "rvm  use 1.9.3@openbook"
 end
