@@ -1,6 +1,6 @@
 
 require 'bundler/capistrano'
-require 'rvm/capistrano'
+#require 'rvm/capistrano'
 set :rvm_bin_path, "/home/deploy/.rvm/bin"
 
 set :application, 'openbook'
