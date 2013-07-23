@@ -25,7 +25,7 @@ ssh_options[:forward_agent] = true
 set :branch, "master"
 set :scm_verbose,true
 set :run_method, :run
-
+set :rvm_bin_path, "/home/deploy/.rvm/bin"
 before :deploy, "deploy:rvm:trust_rvmrc"
 
 #repo detail
