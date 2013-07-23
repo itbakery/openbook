@@ -28,7 +28,7 @@ set :scm_verbose,true
 set :run_method, :run
 set :rvm_bin_path, "/home/deploy/.rvm/bin"
 after :deploy, "deploy:rvm:trust_rvmrc"
-
+before :deploy, "deploy:rvm:setup"
 #repo detail
 set :scm, :git
 set :repository,  'git@github.com:itbakery/openbook.git'
