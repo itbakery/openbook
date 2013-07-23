@@ -1,7 +1,6 @@
 
 require 'bundler/capistrano'
-#require 'rvm/capistrano'
-set :rvm_bin_path, "/home/deploy/.rvm/bin"
+require 'rvm/capistrano'
 
 set :application, 'openbook'
 
@@ -23,12 +22,11 @@ set :use_sudo, false
 set :deploy_to, "/home/deploy/#{application}"
 set :deploy_via, :remote_cache
 ssh_options[:forward_agent] = true
-set :rvm_bin_path, "/home/deploy/.rvm/bin"
 set :branch, "master"
 set :scm_verbose,true
 set :run_method, :run
 
-after :deploy, "deploy:rvm:trust_rvmrc"
+before :deploy, "deploy:rvm:trust_rvmrc"
 
 #repo detail
 set :scm, :git
