@@ -1,12 +1,13 @@
 require 'bundler/capistrano'
 require 'rvm/capistrano'
-
 default_run_options[:pty] = true
 set :rvm_type, :user
+set :keep_releases, 5
 set :user, "deploy"
 set :scm, :git
 set :deploy_to, "/home/deploy/#{application}"
 set :branch, "master"
+
 
 
 set :application, "openbook"
@@ -33,4 +34,4 @@ namespace :deploy do
    task :restart, :roles => :app, :except => { :no_release => true } do
      run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
    end
- end
+end
