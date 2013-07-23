@@ -1,5 +1,8 @@
 
 require 'bundler/capistrano'
+
+set :rvm_ruby_string,  ENV['GEM_HOME'].gsub(/.*\//,"")
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require 'rvm/capistrano'
 
 set :application, 'openbook'
@@ -14,7 +17,6 @@ role :db,  "203.146.127.179"
 #server detail
 set :rails_env, :production
 default_run_options[:pty] = true
-set :rvm_ruby_string,  ENV['GEM_HOME'].gsub(/.*\//,"")
 set :rvm_type, :user
 set :keep_releases, 5
 set :user, "deploy"
