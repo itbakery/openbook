@@ -21,10 +21,10 @@ group :assets do
   gem 'twitter-bootstrap-rails', git: 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
   gem 'uglifier', '>= 1.0.3'
   gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
-  gem 'jquery-ui-rails'
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'mongoid'
 gem 'bson_ext'
 gem 'devise'
