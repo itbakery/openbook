@@ -53,5 +53,14 @@ namespace :deploy do
      run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
    end
 
+  desc "trust rvm"
+  namespace :rvm do
+    task :trust_rvmrc do
+      run "rvm rvmrc trust #{release_path}"
+    end
+    task :setup, :roles => :app do
+      run "cd #{latest_release}; rvm use 1.9.3@#{application} --rvmrc --create && rvm rvmrc trust"
+    end
+  end
 
 end
