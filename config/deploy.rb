@@ -8,10 +8,8 @@ set :scm, :git
 set :deploy_to, "/home/deploy/#{application}"
 set :branch, "master"
 
-
-
-set :application, "openbook"
-set :repository,  "git@github.com:itbakery/openbook.git"
+set :application, 'openbook'
+set :repository,  'git@github.com:itbakery/openbook.git'
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
