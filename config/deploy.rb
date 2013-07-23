@@ -1,23 +1,24 @@
-#addition 1
 require 'bundler/capistrano'
 require 'rvm/capistrano'
-#-----------------------
+
+default_run_options[:pty] = true
+set :rvm_type, :user
+set :user, "deploy"
+set :scm, :git
+set :deploy_to, "/home/deploy/#{application}"
+set :branch, "master"
+
+
 set :application, "openbook"
 set :repository,  "git@github.com:itbakery/openbook.git"
-
-#addition 2
-set :user, "deploy"
-set :deploy_to, "/home/deploy/#{application}"
-set :scm, :git
-
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "203.146.127.179"                          # Your HTTP server, Apache/etc
-role :app, "203.146.127.179"                          # This may be the same as your `Web` server
-role :db,  "203.146.127.179", :primary => true # This is where Rails migrations will run
-role :db,  "203.146.127.179"
+role :web, "sitourtravel.com"                          # Your HTTP server, Apache/etc
+role :app, "sitourtravel.com"                          # This may be the same as your `Web` server
+role :db,  "sitourtravel.com", :primary => true # This is where Rails migrations will run
+role :db,  "sitourtravel.com"
 
 # if you want to clean up old releases on each deploy uncomment this:
 after "deploy:restart", "deploy:cleanup"
