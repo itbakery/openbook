@@ -15,7 +15,7 @@ role :db,  "203.146.127.179"
 set :rails_env, :production
 default_run_options[:pty] = true
 set :rvm_ruby_string, '1.9.3'
-set :rvm_type, :system
+set :rvm_type, :user
 set :keep_releases, 5
 set :user, "deploy"
 set :use_sudo, false
