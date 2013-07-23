@@ -25,6 +25,8 @@ set :deploy_to, "/home/deploy/#{application}"
 set :deploy_via, :remote_cache
 ssh_options[:forward_agent] = true
 
+after :deploy, "deploy:rvm:trust_rvmrc"
+
 #repo detail
 set :scm, :git
 set :repository,  'git@github.com:itbakery/openbook.git'
