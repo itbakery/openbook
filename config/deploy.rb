@@ -1,5 +1,9 @@
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+
 require 'bundler/capistrano'
 require 'rvm/capistrano'
+set :rvm_bin_path, "/home/deploy/.rvm/bin"
+set :rvm_ruby_string, 'ruby-1.9.3-p448@openbook'
 
 set :application, 'openbook'
 
