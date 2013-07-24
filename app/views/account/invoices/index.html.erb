@@ -35,26 +35,16 @@
   </thead>
   <tbody>
     <% @invoices.each do |invoice| %>
-      <% unless invoice.order_reference do %>
+      <% unless invoice.invoice_no.nil?  %>
       <tr>
-        <!--
-        <td><%= link_to invoice.id, invoice_path(invoice) %></td>
-        <td><%= invoice._id %></td>
-        -->
-        <td><%= invoice.invoice_no %></td>
-        <td><%= invoice.order_reference %></td>
-        <td><span><%= invoice.order_date.strftime('%a, %b %d, %Y')%></span></td>
-        <!--
-        <td><%= invoice.description %></td>
-        -->
-        <td><%= invoice.subtotal %></td>
-        <td><%= invoice.discount %></td>
-        <td><%= invoice.tax %></td>
-        <td><%= invoice.grandtotal %></td>
-        <!--
-        <td><%= invoice.note %></td>
-        -->
-        <td><span><%= invoice.created_at.localtime.strftime('%a, %b %d, %Y')%></span></td>
+        <td><%= link_to invoice.invoice_no ,  invoice_path(invoice)%></td>
+        <td><%= invoice.order_reference rescue nil %></td>
+        <td><span><%= invoice.order_date.strftime('%a, %b %d, %Y') rescue nil%></span></td>
+        <td><%= invoice.subtotal rescue nil  %></td>
+        <td><%= invoice.discount rescue nil %></td>
+        <td><%= invoice.tax rescue nil  %></td>
+        <td><%= invoice.grandtotal rescue nil %></td>
+        <td><span><%= invoice.created_at.localtime.strftime('%a, %b %d, %Y') rescue nil%></span></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_account_invoice_path(invoice), :class => 'btn btn-mini' %>
