@@ -39,12 +39,10 @@ status_bg.png: status_bg-367258a0647550e55c6f7a33e91257a6.png
 status_bg/index.png: status_bg-367258a0647550e55c6f7a33e91257a6.png
 underconstruct.png: underconstruct-16f8fc4dfdafa41dcc91650cc83b1d09.png
 underconstruct/index.png: underconstruct-16f8fc4dfdafa41dcc91650cc83b1d09.png
-application.js: application-19a03b89723bb12c9f36660c39639b43.js
-application/index.js: application-19a03b89723bb12c9f36660c39639b43.js
-ckeditor.tar.gz: ckeditor.tar-e4adbd9cff46ce4e09138cdfa0c457da.gz
-ckeditor/index.tar.gz: ckeditor.tar-e4adbd9cff46ce4e09138cdfa0c457da.gz
-application.css: application-3b9543e7a09dd399a6a900a1e2482906.css
-application/index.css: application-3b9543e7a09dd399a6a900a1e2482906.css
+application.js: application-6006a1ff8ab61688c44c51c5b5aa47be.js
+application/index.js: application-6006a1ff8ab61688c44c51c5b5aa47be.js
+application.css: application-a5ecd7af8e2be7df5c5f13536ac6d686.css
+application/index.css: application-a5ecd7af8e2be7df5c5f13536ac6d686.css
 ckeditor/application.js: ckeditor/application-08d5a07c15312176e68f9300fb0c2559.js
 ckeditor/application/index.js: ckeditor/application-08d5a07c15312176e68f9300fb0c2559.js
 ckeditor/config.js: ckeditor/config-5932b9668cbe24fdb419ce043ebdf527.js
@@ -601,8 +599,6 @@ ckeditor/skins/moono/readme.md: ckeditor/skins/moono/readme-9b72af43c446204b0608
 ckeditor/skins/moono/readme/index.md: ckeditor/skins/moono/readme-9b72af43c446204b0608bf55a4809fd9.md
 ckeditor/styles.js: ckeditor/styles-329c9c441d1b88cc90efc10925337a77.js
 ckeditor/styles/index.js: ckeditor/styles-329c9c441d1b88cc90efc10925337a77.js
-jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
-jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery-ui/animated-overlay.gif: jquery-ui/animated-overlay-602eee4c79a4796b02bb6442948c9e28.gif
 jquery-ui/animated-overlay/index.gif: jquery-ui/animated-overlay-602eee4c79a4796b02bb6442948c9e28.gif
 jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png: jquery-ui/ui-bg_flat_0_aaaaaa_40x100-7d1197a52442bc56fcad60d0390f4b32.png
@@ -631,6 +627,8 @@ jquery-ui/ui-icons_888888_256x240.png: jquery-ui/ui-icons_888888_256x240-8040cfc
 jquery-ui/ui-icons_888888_256x240/index.png: jquery-ui/ui-icons_888888_256x240-8040cfcc88792375b7788feb59189eef.png
 jquery-ui/ui-icons_cd0a0a_256x240.png: jquery-ui/ui-icons_cd0a0a_256x240-d4a62216bf6f0cd0071149890763a5ff.png
 jquery-ui/ui-icons_cd0a0a_256x240/index.png: jquery-ui/ui-icons_cd0a0a_256x240-d4a62216bf6f0cd0071149890763a5ff.png
+jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
+jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 dataTables/back_disabled.png: dataTables/back_disabled-7a902951219d10f938f642f8dcfbd0b2.png
 dataTables/back_disabled/index.png: dataTables/back_disabled-7a902951219d10f938f642f8dcfbd0b2.png
 dataTables/back_enabled.png: dataTables/back_enabled-6eb9125f3bb6cbca38c2f71664f9e000.png

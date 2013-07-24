@@ -24,6 +24,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'bcrypt-ruby'
 gem 'jquery-ui-rails'
 gem 'mongoid'
 gem 'bson_ext'

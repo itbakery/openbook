@@ -199,6 +199,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby
   best_in_place
   bson_ext
   cancan
