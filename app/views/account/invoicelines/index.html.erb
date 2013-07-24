@@ -5,8 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:_id) %></th>
       <th><%= model_class.human_attribute_name(:lineno) %></th>
       <th><%= model_class.human_attribute_name(:product) %></th>
       <th><%= model_class.human_attribute_name(:quantity) %></th>
@@ -19,9 +17,7 @@
   <tbody>
     <% @invoicelines.each do |invoiceline| %>
       <tr>
-        <td><%= link_to invoiceline.id, invoiceline_path(invoiceline) %></td>
-        <td><%= invoiceline._id %></td>
-        <td><%= invoiceline.lineno %></td>
+        <td><%= link_to invoiceline.lineno, invoiceline_path(invoiceline) %></td>
         <td><%= invoiceline.product %></td>
         <td><%= invoiceline.quantity %></td>
         <td><%= invoiceline.unitprice %></td>
