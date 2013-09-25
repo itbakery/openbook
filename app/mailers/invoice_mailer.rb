@@ -9,8 +9,7 @@ class InvoiceMailer < ActionMailer::Base
   #
   def confirm_payment(invoice)
     @invoice = invoice
-
-    mail to: "#{invoice.customer.firstname}<#{invoice.customer.email}>", subject: "confirm sitour's payment"
+    mail to: "#{invoice.customer.firstname}<#{invoice.customer.email}>", subject: "confirm sitour's payment", cc: "accounts@sitours.co.th"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
